@@ -136,6 +136,7 @@ input 		     [1:0]		GPIO_1_IN;
 //=======================================================
 
 //user code 
+/*
 wire out_led_50k;
 wire out_led_30k; 
 wire out_led_10k;
@@ -145,9 +146,17 @@ counter #(833) cnt_30k(CLOCK_50, out_led_30k);
 assign LED[2] = out_led_50k;
 assign LED[1] = out_led_30k;
 assign LED[0] = out_led_10k;
+*/
+
+wire in_led1;
+wire in_led2;
+wire in_led3;
+counter_mixer #(1, 2, 5) cnt_yellowos(CLOCK_50, in_led1, in_led2, in_led3);
+assign LED[0] = in_led1;
+assign LED[1] = in_led2;
+assign LED[2] = in_led3;
 
 endmodule
-
 
 
 //user module
@@ -179,4 +188,50 @@ module counter
 
 endmodule
 
-module counter
+
+module counter_mixer
+#(parameter freq_1, freq_2, freq_3)				//freqency = freq*1k
+(
+	input clk,
+	output wire out_1,
+	output wire out_2,
+	output wire out_3
+	);
+	
+
+wire out_cnt1;
+wire out_cnt2;
+wire out_cnt3;
+	counter #(50000/freq_1/2) cnt1(CLOCK_50, out_cnt1);
+	counter #(50000/freq_2/2) cnt2(CLOCK_50, out_cnt2);
+	counter #(50000/freq_3/2) cnt3(CLOCK_50, out_cnt3);
+assign out_1 = out_cnt1;
+assign out_2 = out_cnt2;
+assign out_3 = out_cnt3;
+	
+endmodule
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

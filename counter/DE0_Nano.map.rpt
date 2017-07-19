@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_Nano
-Mon Jul 10 22:13:11 2017
+Wed Jul 12 12:27:33 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,13 +13,15 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: counter:cnt_50k
- 10. Parameter Settings for User Entity Instance: counter:cnt_10k
- 11. Parameter Settings for User Entity Instance: counter:cnt_30k
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos
+ 11. Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt1
+ 12. Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt2
+ 13. Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt3
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,15 +48,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 10 22:13:11 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 12 12:27:33 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; DE0_Nano                                    ;
 ; Top-level Entity Name              ; DE0_Nano                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 42                                          ;
-;     Total combinational functions  ; 42                                          ;
-;     Dedicated logic registers      ; 34                                          ;
-; Total registers                    ; 34                                          ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
 ; Total pins                         ; 154                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -158,66 +160,76 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; DE0_Nano.v                       ; yes             ; User Verilog HDL File  ; //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
+; DE0_Nano.v                       ; yes             ; User Verilog HDL File  ; //Mac/Home/Documents/FPGA/counter/DE0_Nano.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 42             ;
-;                                             ;                ;
-; Total combinational functions               ; 42             ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 7              ;
-;     -- 3 input functions                    ; 2              ;
-;     -- <=2 input functions                  ; 33             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 14             ;
-;     -- arithmetic mode                      ; 28             ;
-;                                             ;                ;
-; Total registers                             ; 34             ;
-;     -- Dedicated logic registers            ; 34             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 154            ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 34             ;
-; Total fan-out                               ; 451            ;
-; Average fan-out                             ; 0.94           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+;                                             ;                   ;
+; Total combinational functions               ; 0                 ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 0                 ;
+;     -- 3 input functions                    ; 0                 ;
+;     -- <=2 input functions                  ; 0                 ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 0                 ;
+;     -- arithmetic mode                      ; 0                 ;
+;                                             ;                   ;
+; Total registers                             ; 0                 ;
+;     -- Dedicated logic registers            ; 0                 ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 154               ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; DRAM_DQ[0]~output ;
+; Maximum fan-out                             ; 1                 ;
+; Total fan-out                               ; 252               ;
+; Average fan-out                             ; 0.62              ;
++---------------------------------------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
-; |DE0_Nano                  ; 42 (0)              ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 154  ; 0            ; |DE0_Nano                 ; DE0_Nano    ; work         ;
-;    |counter:cnt_10k|       ; 17 (17)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_Nano|counter:cnt_10k ; counter     ; work         ;
-;    |counter:cnt_30k|       ; 12 (12)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_Nano|counter:cnt_30k ; counter     ; work         ;
-;    |counter:cnt_50k|       ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_Nano|counter:cnt_50k ; counter     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |DE0_Nano                  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 154  ; 0            ; |DE0_Nano           ; DE0_Nano    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++----------------------------------------------------+--------------------------------------+
+; Register name                                      ; Reason for Removal                   ;
++----------------------------------------------------+--------------------------------------+
+; counter_mixer:cnt_yellowos|counter:cnt3|io_out     ; Stuck at GND due to stuck port clock ;
+; counter_mixer:cnt_yellowos|counter:cnt3|cnt[0..12] ; Stuck at GND due to stuck port clock ;
+; counter_mixer:cnt_yellowos|counter:cnt2|io_out     ; Stuck at GND due to stuck port clock ;
+; counter_mixer:cnt_yellowos|counter:cnt2|cnt[0..13] ; Stuck at GND due to stuck port clock ;
+; counter_mixer:cnt_yellowos|counter:cnt1|io_out     ; Stuck at GND due to stuck port clock ;
+; counter_mixer:cnt_yellowos|counter:cnt1|cnt[0..14] ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 45             ;                                      ;
++----------------------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -225,8 +237,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34    ;
-; Number of registers using Synchronous Clear  ; 31    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -235,33 +247,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:cnt_50k ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; M              ; 500   ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; freq_1         ; 1     ; Signed Integer                                 ;
+; freq_2         ; 2     ; Signed Integer                                 ;
+; freq_3         ; 5     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:cnt_10k ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; M              ; 2500  ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt1 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; M              ; 25000 ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:cnt_30k ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; M              ; 833   ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; M              ; 12500 ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_mixer:cnt_yellowos|counter:cnt3 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; M              ; 5000  ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -271,22 +295,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 154                         ;
-; cycloneiii_ff         ; 34                          ;
-;     SCLR              ; 31                          ;
-;     plain             ; 3                           ;
 ; cycloneiii_io_obuf    ; 98                          ;
-; cycloneiii_lcell_comb ; 43                          ;
-;     arith             ; 28                          ;
-;         2 data inputs ; 28                          ;
-;     normal            ; 15                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 7                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.03                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -295,7 +310,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -305,200 +320,207 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jul 10 22:12:55 2017
+    Info: Processing started: Wed Jul 12 12:27:16 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_Nano -c DE0_Nano
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 2 entities, in source file de0_nano.v
-    Info (12023): Found entity 1: DE0_Nano File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 6
-    Info (12023): Found entity 2: counter File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 155
+Info (12021): Found 3 design units, including 3 entities, in source file de0_nano.v
+    Info (12023): Found entity 1: DE0_Nano File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 6
+    Info (12023): Found entity 2: counter File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 164
+    Info (12023): Found entity 3: counter_mixer File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 192
+Warning (10236): Verilog HDL Implicit Net warning at DE0_Nano.v(205): created implicit net for "CLOCK_50" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 205
 Info (12127): Elaborating entity "DE0_Nano" for the top level hierarchy
-Warning (10034): Output port "LED[7..3]" at DE0_Nano.v(76) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-Warning (10034): Output port "DRAM_ADDR" at DE0_Nano.v(85) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-Warning (10034): Output port "DRAM_BA" at DE0_Nano.v(86) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 86
-Warning (10034): Output port "DRAM_DQM" at DE0_Nano.v(92) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 92
-Warning (10034): Output port "DRAM_CAS_N" at DE0_Nano.v(87) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 87
-Warning (10034): Output port "DRAM_CKE" at DE0_Nano.v(88) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 88
-Warning (10034): Output port "DRAM_CLK" at DE0_Nano.v(89) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 89
-Warning (10034): Output port "DRAM_CS_N" at DE0_Nano.v(90) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 90
-Warning (10034): Output port "DRAM_RAS_N" at DE0_Nano.v(93) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 93
-Warning (10034): Output port "DRAM_WE_N" at DE0_Nano.v(94) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 94
-Warning (10034): Output port "EPCS_ASDO" at DE0_Nano.v(97) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 97
-Warning (10034): Output port "EPCS_DCLK" at DE0_Nano.v(99) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 99
-Warning (10034): Output port "EPCS_NCSO" at DE0_Nano.v(100) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 100
-Warning (10034): Output port "G_SENSOR_CS_N" at DE0_Nano.v(103) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 103
-Warning (10034): Output port "I2C_SCLK" at DE0_Nano.v(105) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 105
-Warning (10034): Output port "ADC_CS_N" at DE0_Nano.v(109) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 109
-Warning (10034): Output port "ADC_SADDR" at DE0_Nano.v(110) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 110
-Warning (10034): Output port "ADC_SCLK" at DE0_Nano.v(111) has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 111
-Info (12128): Elaborating entity "counter" for hierarchy "counter:cnt_50k" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 142
-Info (12128): Elaborating entity "counter" for hierarchy "counter:cnt_10k" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 143
-Info (12128): Elaborating entity "counter" for hierarchy "counter:cnt_30k" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 144
+Warning (10034): Output port "LED[7..3]" at DE0_Nano.v(76) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+Warning (10034): Output port "DRAM_ADDR" at DE0_Nano.v(85) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+Warning (10034): Output port "DRAM_BA" at DE0_Nano.v(86) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 86
+Warning (10034): Output port "DRAM_DQM" at DE0_Nano.v(92) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 92
+Warning (10034): Output port "DRAM_CAS_N" at DE0_Nano.v(87) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 87
+Warning (10034): Output port "DRAM_CKE" at DE0_Nano.v(88) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 88
+Warning (10034): Output port "DRAM_CLK" at DE0_Nano.v(89) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 89
+Warning (10034): Output port "DRAM_CS_N" at DE0_Nano.v(90) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 90
+Warning (10034): Output port "DRAM_RAS_N" at DE0_Nano.v(93) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 93
+Warning (10034): Output port "DRAM_WE_N" at DE0_Nano.v(94) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 94
+Warning (10034): Output port "EPCS_ASDO" at DE0_Nano.v(97) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 97
+Warning (10034): Output port "EPCS_DCLK" at DE0_Nano.v(99) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 99
+Warning (10034): Output port "EPCS_NCSO" at DE0_Nano.v(100) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 100
+Warning (10034): Output port "G_SENSOR_CS_N" at DE0_Nano.v(103) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 103
+Warning (10034): Output port "I2C_SCLK" at DE0_Nano.v(105) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 105
+Warning (10034): Output port "ADC_CS_N" at DE0_Nano.v(109) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 109
+Warning (10034): Output port "ADC_SADDR" at DE0_Nano.v(110) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 110
+Warning (10034): Output port "ADC_SCLK" at DE0_Nano.v(111) has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 111
+Info (12128): Elaborating entity "counter_mixer" for hierarchy "counter_mixer:cnt_yellowos" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 154
+Info (12128): Elaborating entity "counter" for hierarchy "counter_mixer:cnt_yellowos|counter:cnt1" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 205
+Info (12128): Elaborating entity "counter" for hierarchy "counter_mixer:cnt_yellowos|counter:cnt2" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 206
+Info (12128): Elaborating entity "counter" for hierarchy "counter_mixer:cnt_yellowos|counter:cnt3" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 207
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "counter_mixer:cnt_yellowos|CLOCK_50" is missing source, defaulting to GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 205
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 91
-    Warning (13040): bidirectional pin "I2C_SDAT" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 106
-    Warning (13040): bidirectional pin "GPIO_2[0]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[1]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[2]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[3]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[4]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[5]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[6]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[7]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[8]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[9]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[10]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[11]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_2[12]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 115
-    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 119
-    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
-    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 91
+    Warning (13040): bidirectional pin "I2C_SDAT" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 106
+    Warning (13040): bidirectional pin "GPIO_2[0]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[1]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[2]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[3]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[4]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[5]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[6]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[7]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[8]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[9]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[10]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[11]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_2[12]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 115
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 119
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 123
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[3]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-    Warning (13410): Pin "LED[4]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-    Warning (13410): Pin "LED[5]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-    Warning (13410): Pin "LED[6]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-    Warning (13410): Pin "LED[7]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 76
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 85
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 86
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 86
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 87
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 88
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 89
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 90
-    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 92
-    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 92
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 93
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 94
-    Warning (13410): Pin "EPCS_ASDO" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 97
-    Warning (13410): Pin "EPCS_DCLK" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 99
-    Warning (13410): Pin "EPCS_NCSO" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 100
-    Warning (13410): Pin "G_SENSOR_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 103
-    Warning (13410): Pin "I2C_SCLK" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 105
-    Warning (13410): Pin "ADC_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 109
-    Warning (13410): Pin "ADC_SADDR" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 110
-    Warning (13410): Pin "ADC_SCLK" is stuck at GND File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 111
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13410): Pin "LED[0]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[1]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[2]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[3]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[4]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[5]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[6]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "LED[7]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 76
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 85
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 86
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 86
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 87
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 88
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 89
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 90
+    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 92
+    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 92
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 93
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 94
+    Warning (13410): Pin "EPCS_ASDO" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 97
+    Warning (13410): Pin "EPCS_DCLK" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 99
+    Warning (13410): Pin "EPCS_NCSO" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 100
+    Warning (13410): Pin "G_SENSOR_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 103
+    Warning (13410): Pin "I2C_SCLK" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 105
+    Warning (13410): Pin "ADC_CS_N" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 109
+    Warning (13410): Pin "ADC_SADDR" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 110
+    Warning (13410): Pin "ADC_SCLK" is stuck at GND File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 111
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 79
-    Warning (15610): No output dependent on input pin "KEY[1]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 79
-    Warning (15610): No output dependent on input pin "SW[0]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 82
-    Warning (15610): No output dependent on input pin "SW[1]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 82
-    Warning (15610): No output dependent on input pin "SW[2]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 82
-    Warning (15610): No output dependent on input pin "SW[3]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 82
-    Warning (15610): No output dependent on input pin "EPCS_DATA0" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 98
-    Warning (15610): No output dependent on input pin "G_SENSOR_INT" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 104
-    Warning (15610): No output dependent on input pin "ADC_SDAT" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 112
-    Warning (15610): No output dependent on input pin "GPIO_2_IN[0]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 116
-    Warning (15610): No output dependent on input pin "GPIO_2_IN[1]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 116
-    Warning (15610): No output dependent on input pin "GPIO_2_IN[2]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 116
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[0]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 120
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[1]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 120
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[0]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 124
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[1]" File: //Mac/Home/Documents/FPGA_projects/counter/DE0_Nano.v Line: 124
-Info (21057): Implemented 196 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 73
+    Warning (15610): No output dependent on input pin "KEY[0]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 79
+    Warning (15610): No output dependent on input pin "KEY[1]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 79
+    Warning (15610): No output dependent on input pin "SW[0]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 82
+    Warning (15610): No output dependent on input pin "SW[1]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 82
+    Warning (15610): No output dependent on input pin "SW[2]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 82
+    Warning (15610): No output dependent on input pin "SW[3]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 82
+    Warning (15610): No output dependent on input pin "EPCS_DATA0" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 98
+    Warning (15610): No output dependent on input pin "G_SENSOR_INT" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 104
+    Warning (15610): No output dependent on input pin "ADC_SDAT" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 112
+    Warning (15610): No output dependent on input pin "GPIO_2_IN[0]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 116
+    Warning (15610): No output dependent on input pin "GPIO_2_IN[1]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 116
+    Warning (15610): No output dependent on input pin "GPIO_2_IN[2]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 116
+    Warning (15610): No output dependent on input pin "GPIO_0_IN[0]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 120
+    Warning (15610): No output dependent on input pin "GPIO_0_IN[1]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 120
+    Warning (15610): No output dependent on input pin "GPIO_1_IN[0]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 124
+    Warning (15610): No output dependent on input pin "GPIO_1_IN[1]" File: //Mac/Home/Documents/FPGA/counter/DE0_Nano.v Line: 124
+Info (21057): Implemented 154 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 39 output pins
     Info (21060): Implemented 98 bidirectional pins
-    Info (21061): Implemented 42 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 172 warnings
-    Info: Peak virtual memory: 650 megabytes
-    Info: Processing ended: Mon Jul 10 22:13:11 2017
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:34
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 179 warnings
+    Info: Peak virtual memory: 620 megabytes
+    Info: Processing ended: Wed Jul 12 12:27:33 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:35
 
 

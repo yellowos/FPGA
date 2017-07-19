@@ -1,38 +1,38 @@
 |DE0_Nano
-CLOCK_50 => CLOCK_50.IN3
-LED[0] <= counter:cnt_10k.port1
-LED[1] <= counter:cnt_30k.port1
-LED[2] <= counter:cnt_50k.port1
-LED[3] <= <GND>
-LED[4] <= <GND>
-LED[5] <= <GND>
-LED[6] <= <GND>
-LED[7] <= <GND>
+CLOCK_50 => CLOCK_50.IN1
+LED[0] << counter_mixer:cnt_yellowos.port1
+LED[1] << counter_mixer:cnt_yellowos.port2
+LED[2] << counter_mixer:cnt_yellowos.port3
+LED[3] << <GND>
+LED[4] << <GND>
+LED[5] << <GND>
+LED[6] << <GND>
+LED[7] << <GND>
 KEY[0] => ~NO_FANOUT~
 KEY[1] => ~NO_FANOUT~
 SW[0] => ~NO_FANOUT~
 SW[1] => ~NO_FANOUT~
 SW[2] => ~NO_FANOUT~
 SW[3] => ~NO_FANOUT~
-DRAM_ADDR[0] <= <GND>
-DRAM_ADDR[1] <= <GND>
-DRAM_ADDR[2] <= <GND>
-DRAM_ADDR[3] <= <GND>
-DRAM_ADDR[4] <= <GND>
-DRAM_ADDR[5] <= <GND>
-DRAM_ADDR[6] <= <GND>
-DRAM_ADDR[7] <= <GND>
-DRAM_ADDR[8] <= <GND>
-DRAM_ADDR[9] <= <GND>
-DRAM_ADDR[10] <= <GND>
-DRAM_ADDR[11] <= <GND>
-DRAM_ADDR[12] <= <GND>
-DRAM_BA[0] <= <GND>
-DRAM_BA[1] <= <GND>
-DRAM_CAS_N <= <GND>
-DRAM_CKE <= <GND>
-DRAM_CLK <= <GND>
-DRAM_CS_N <= <GND>
+DRAM_ADDR[0] << <GND>
+DRAM_ADDR[1] << <GND>
+DRAM_ADDR[2] << <GND>
+DRAM_ADDR[3] << <GND>
+DRAM_ADDR[4] << <GND>
+DRAM_ADDR[5] << <GND>
+DRAM_ADDR[6] << <GND>
+DRAM_ADDR[7] << <GND>
+DRAM_ADDR[8] << <GND>
+DRAM_ADDR[9] << <GND>
+DRAM_ADDR[10] << <GND>
+DRAM_ADDR[11] << <GND>
+DRAM_ADDR[12] << <GND>
+DRAM_BA[0] << <GND>
+DRAM_BA[1] << <GND>
+DRAM_CAS_N << <GND>
+DRAM_CKE << <GND>
+DRAM_CLK << <GND>
+DRAM_CS_N << <GND>
 DRAM_DQ[0] <> <UNC>
 DRAM_DQ[1] <> <UNC>
 DRAM_DQ[2] <> <UNC>
@@ -49,21 +49,21 @@ DRAM_DQ[12] <> <UNC>
 DRAM_DQ[13] <> <UNC>
 DRAM_DQ[14] <> <UNC>
 DRAM_DQ[15] <> <UNC>
-DRAM_DQM[0] <= <GND>
-DRAM_DQM[1] <= <GND>
-DRAM_RAS_N <= <GND>
-DRAM_WE_N <= <GND>
-EPCS_ASDO <= <GND>
+DRAM_DQM[0] << <GND>
+DRAM_DQM[1] << <GND>
+DRAM_RAS_N << <GND>
+DRAM_WE_N << <GND>
+EPCS_ASDO << <GND>
 EPCS_DATA0 => ~NO_FANOUT~
-EPCS_DCLK <= <GND>
-EPCS_NCSO <= <GND>
-G_SENSOR_CS_N <= <GND>
+EPCS_DCLK << <GND>
+EPCS_NCSO << <GND>
+G_SENSOR_CS_N << <GND>
 G_SENSOR_INT => ~NO_FANOUT~
-I2C_SCLK <= <GND>
+I2C_SCLK << <GND>
 I2C_SDAT <> <UNC>
-ADC_CS_N <= <GND>
-ADC_SADDR <= <GND>
-ADC_SCLK <= <GND>
+ADC_CS_N << <GND>
+ADC_SADDR << <GND>
+ADC_SCLK << <GND>
 ADC_SDAT => ~NO_FANOUT~
 GPIO_2[0] <> <UNC>
 GPIO_2[1] <> <UNC>
@@ -155,21 +155,14 @@ GPIO_1_IN[0] => ~NO_FANOUT~
 GPIO_1_IN[1] => ~NO_FANOUT~
 
 
-|DE0_Nano|counter:cnt_50k
-clk => io_out~reg0.CLK
-clk => cnt[0].CLK
-clk => cnt[1].CLK
-clk => cnt[2].CLK
-clk => cnt[3].CLK
-clk => cnt[4].CLK
-clk => cnt[5].CLK
-clk => cnt[6].CLK
-clk => cnt[7].CLK
-clk => cnt[8].CLK
-io_out <= io_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|DE0_Nano|counter_mixer:cnt_yellowos
+clk => ~NO_FANOUT~
+out_1 <= counter:cnt1.port1
+out_2 <= counter:cnt2.port1
+out_3 <= counter:cnt3.port1
 
 
-|DE0_Nano|counter:cnt_10k
+|DE0_Nano|counter_mixer:cnt_yellowos|counter:cnt1
 clk => io_out~reg0.CLK
 clk => cnt[0].CLK
 clk => cnt[1].CLK
@@ -183,10 +176,13 @@ clk => cnt[8].CLK
 clk => cnt[9].CLK
 clk => cnt[10].CLK
 clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
 io_out <= io_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE0_Nano|counter:cnt_30k
+|DE0_Nano|counter_mixer:cnt_yellowos|counter:cnt2
 clk => io_out~reg0.CLK
 clk => cnt[0].CLK
 clk => cnt[1].CLK
@@ -198,6 +194,28 @@ clk => cnt[6].CLK
 clk => cnt[7].CLK
 clk => cnt[8].CLK
 clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+io_out <= io_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE0_Nano|counter_mixer:cnt_yellowos|counter:cnt3
+clk => io_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
 io_out <= io_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
