@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+
 module testbench;
 	reg clk;
 	reg [3 : 0] code_in;

@@ -5,4 +5,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	testbench
 
+} {} {}} //Mac/Home/Documents/FPGA/4_2_priority_encoder/4_2_priority_encoder.v {1 {vlog -work work -stats=none //Mac/Home/Documents/FPGA/4_2_priority_encoder/4_2_priority_encoder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module p_encoder
+
+Top level modules:
+	p_encoder
+
 } {} {}}

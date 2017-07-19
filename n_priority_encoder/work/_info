@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d//Mac/Home/Documents/FPGA/4_2_priority_encoder
+vn_priority_encoder
+Z0 !s110 1500456148
+!i10b 1
+!s100 nkoXSE<HlZBCSL>cQ0Z8_1
+I0<m?eldL?SCRTI59gJX7f3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d//Mac/Home/Documents/FPGA/n_priority_encoder
+w1500456064
+8\\Mac\Home\Documents\FPGA\n_priority_encoder\n_priority_encoder.v
+F\\Mac\Home\Documents\FPGA\n_priority_encoder\n_priority_encoder.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1500456148.000000
+!s107 \\Mac\Home\Documents\FPGA\n_priority_encoder\n_priority_encoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|\\Mac\Home\Documents\FPGA\n_priority_encoder\n_priority_encoder.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtestbench
+R0
+!i10b 1
+!s100 O8WT<5l8@?l;J<I4Uojb01
+I]Adc4zz1LRUej=A=a4JK=1
+R1
+R2
+w1500456075
+8//Mac/Home/Documents/FPGA/n_priority_encoder/testbench.v
+F//Mac/Home/Documents/FPGA/n_priority_encoder/testbench.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 //Mac/Home/Documents/FPGA/n_priority_encoder/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/FPGA/n_priority_encoder/testbench.v|
+!i113 1
+R5
+R6
