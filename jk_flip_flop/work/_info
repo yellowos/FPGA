@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d//Mac/Home/Documents/FPGA/n_priority_encoder
+vjk_flip_flop
+Z0 !s110 1500461630
+!i10b 1
+!s100 SR83m=D@>H?W7iz]KP@_T2
+Ih2?P[QH=ZC?<iJW8U`^zW1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d//Mac/Home/Documents/FPGA/jk_flip_flop
+w1500461617
+8//Mac/Home/Documents/FPGA/jk_flip_flop/jk_flip_flop.v
+F//Mac/Home/Documents/FPGA/jk_flip_flop/jk_flip_flop.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1500461630.000000
+!s107 //Mac/Home/Documents/FPGA/jk_flip_flop/jk_flip_flop.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/FPGA/jk_flip_flop/jk_flip_flop.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtestbench
+R0
+!i10b 1
+!s100 8MJj57ACH>UHIXFBl`1O:3
+IOkJS=8MWLk6Z_zog6Gb^21
+R1
+R2
+w1500461622
+8//Mac/Home/Documents/FPGA/jk_flip_flop/testbench.v
+F//Mac/Home/Documents/FPGA/jk_flip_flop/testbench.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 //Mac/Home/Documents/FPGA/jk_flip_flop/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/FPGA/jk_flip_flop/testbench.v|
+!i113 1
+R5
+R6
