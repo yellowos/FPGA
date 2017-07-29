@@ -8,3 +8,45 @@ z2
 !i10f 100
 cModel Technology
 d//Mac/Home/Documents/FPGA/jk_flip_flop
+vdcmi
+Z0 !s110 1501321061
+!i10b 1
+!s100 =L3B_An;NY9I@7E5D6BH10
+IUc@UFRkiDD^fUDO[=oY150
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d//Mac/Home/Documents/FPGA/uart
+w1501321059
+8//Mac/Home/Documents/FPGA/uart/dcmi.v
+F//Mac/Home/Documents/FPGA/uart/dcmi.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1501321061.000000
+!s107 //Mac/Home/Documents/FPGA/uart/dcmi.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/FPGA/uart/dcmi.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vuart_ttl_send
+R0
+!i10b 1
+!s100 c>SNLmb7S1NRGg?C>Qzz_2
+IGW=bY;7l@9I_1Z2dH4_<53
+R1
+R2
+w1501320978
+8//Mac/Home/Documents/FPGA/uart/uart.v
+F//Mac/Home/Documents/FPGA/uart/uart.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1501321060.000000
+!s107 //Mac/Home/Documents/FPGA/uart/uart.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/FPGA/uart/uart.v|
+!i113 1
+R4
+R5

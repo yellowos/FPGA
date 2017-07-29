@@ -1,18 +1,18 @@
 stat 1:
 	stop mode
-	send = 0
+	busy = 0
 	data = 8'b11111111
 	i = 0 
 
 stat 2:
 	translate mode
-	send = 1
+	busy = 1
 	data = input data
 	0 <= i <= 7
 
 stat 1 ---> stat 2 need:
-	send = 1
+	busy = 1
 
 stat 2 ---> stat 1 need:
-	i == 8
+	i == 7
 

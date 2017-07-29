@@ -1,11 +1,11 @@
 module uart_ttl_send
 (
-	input  [7 : 0] send_data,
+	input reg [7 : 0] send_data,
        	input baud_rate_sign,
 	input clk,
 	output reg serial_send,
 //	output reg send_finish,
-	output reg send
+	inout reg send
 );
 	integer i;
 
