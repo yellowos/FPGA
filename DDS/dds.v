@@ -1,0 +1,60 @@
+module dds_pulse #(
+	//give the wide of the divide parameter
+	//the mini_freq = 50M / (2 ** freq_w)
+	parameter freq_w = 32,
+)
+(
+	input clk,
+	//input 1 would reset the circuit
+	input reset,
+	//the real_freq = (50M * freq_ctrl_f) / (2 ** freq_w)
+	//
+	//---------------------------------------
+	//	[freq]	|	[freq_ctrl_f]	|
+	//--------------|-----------------------|	
+	//	10K	|	858,993		|
+	//	30K	|	2,576,980	|
+	//	50K	|	4,294,967	|
+	//---------------------------------------
+	//
+	input [(freq_w-1) : 0] freq_ctrl_f,
+	//the phase_delay = (freq_ctrl_p * 2 * pie) / (2 ** freq_w)
+	input [(freq_w-1) : 0] freq_ctrl_p,
+	output pulse,
+);
+
+
+reg [(freq_ctrl-1) : 0] cnt;
+//the cnt_shadow is to use to add the freq_ctrl_p only when compare
+reg [(freq_ctrl-1) : 0] cnt_shadow;
+
+initial begin
+	cnt <= 1'b0;
+end
+
+always@(posedge clk) begin
+	if(reset == 0) begin
+		cnt <= cnt + freq_ctrl_f;
+		cnt_shadow <= cnt + freq_ctrl_p;
+	end
+	else begin
+		cnt <= 1'b0;
+		cnt_shadow <= 1'b0;
+	end
+end
+
+always@(posedge clk) begin
+	if(reset == 0) begin
+		if(cnt_shadow[(freq_w - 1)] == 1) begin
+			pulse <= 1'b1;
+		end
+		else begin 
+			pulse <= 1'b0;
+		end
+	end
+	else begin
+		pulse <= 1'b0;
+	end
+end
+
+endmodule

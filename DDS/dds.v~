@@ -1,0 +1,43 @@
+module dds #(
+	parameter freq_w,
+)
+(
+	input clk,
+//	input clken,
+	input reset,
+	input [(freq_w-1) : 0] freq_ctrl_f,
+	input [(freq_w-1) : 0] freq_ctrl_p,
+	output pulse,
+);
+
+reg [(freq_ctrl-1) : 0] cnt;
+reg [(freq_ctrl-1) : 0] cnt_shadow;
+
+initial begin
+	cnt <= 1'b0;
+end
+
+always@(posedge clk) begin
+	if(reset == 0) begin
+		cnt <= cnt + freq_ctrl_f;
+		cnt_shadow <= cnt + freq_ctrl_p;
+	end
+	else begin
+		cnt <= 1'b0;
+		cnt_shadow <= 1'b0;
+	end
+end
+
+always@(posedge clk) begin
+	if(reset == 0) begin
+		if(cnt_shadow > (2 ** (freq_w - 2))) begin
+			pulse <= 1'b1;
+		end
+		else begin 
+			pulse <= 1'b0;
+		end
+	end
+	else begin
+		pulse <= 1'b0;
+	end
+end
