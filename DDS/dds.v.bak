@@ -30,8 +30,7 @@ reg [(freq_w-1) : 0] cnt;
 reg [(freq_w-1) : 0] cnt_shadow;
 
 initial begin
-	cnt = 1'b0;
-	pulse = 1'b0;
+	cnt <= 1'b0;
 end
 
 always@(posedge clk) begin

@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.0
+vdds_pulse
+Z0 !s110 1503325909
+!i10b 1
+!s100 SM2<P2OTFWomHzmZU=hi43
+I:L44<_EV4]V`kk3XX[`dU3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/yellowos/OneDrive/FPGA/DDS
+w1503323240
+8C:/Users/yellowos/OneDrive/FPGA/DDS/dds.v
+FC:/Users/yellowos/OneDrive/FPGA/DDS/dds.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1503325909.000000
+!s107 C:/Users/yellowos/OneDrive/FPGA/DDS/dds.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yellowos/OneDrive/FPGA/DDS/dds.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vtestbench
+R0
+!i10b 1
+!s100 J`::gUYZ8`:CbVYaK@6eF3
+I@O4SFRajJ?lFL<o?_NPZA2
+R1
+R2
+w1503325906
+8C:\Users\yellowos\OneDrive\FPGA\DDS\testbench.v
+FC:\Users\yellowos\OneDrive\FPGA\DDS\testbench.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1503325908.000000
+!s107 C:\Users\yellowos\OneDrive\FPGA\DDS\testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\yellowos\OneDrive\FPGA\DDS\testbench.v|
+!i113 1
+R4
+R5
